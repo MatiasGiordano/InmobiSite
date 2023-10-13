@@ -1,26 +1,33 @@
-import React from 'react';
-import SlickSlider from 'react-slick';
-import Slide from './Slide';
-import Arrow from './Arrow';
+import { Carousel } from 'react-bootstrap';
+import './Slider.css';
 
-function Slider(props) {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 6,
-        slidesToScroll: 3,
-        nextArrow: <Arrow direction="next" />,
-        prevArrow: <Arrow direction="prev" />
-    };
+function Slider(imagenes) {
+    const imgList = imagenes.imagenes;
+    const gruposDeImagenes = [];
+    for (let i = 0; i < imgList.length; i += 6) {
+        gruposDeImagenes.push(imgList.slice(i, i + 6));
+    }
 
     return (
-        <SlickSlider {...settings}>
-            {props.imagenes.map((slide, index) => (
-                <Slide key={index} data={slide} />
+        <Carousel>
+            {gruposDeImagenes.map((grupo, idx) => (
+                <Carousel.Item key={idx}>
+                    <div className="d-flex justify-content-between">
+                        {grupo.map((imagen, index) => (
+                            <div className="d-inline-block w-16 card" key={index}>
+                                <img src={imagen.imageUrl} className="card-img-top" alt="..." />
+                                <div className="card-body">
+                                    <h5 className="card-title">{imagen.title}</h5>
+                                    <p className="card-text">{imagen.description}</p>
+                                    <a href="#" className="btn btn-primary">Info</a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </Carousel.Item>
             ))}
-        </SlickSlider>
+        </Carousel>
+
     );
 }
-
 export default Slider;

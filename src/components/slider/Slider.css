@@ -1,14 +1,16 @@
-.Slide img {
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible de su contenedor */
-    display: block; /* Elimina cualquier margen extra alrededor de la imagen */
-    margin: 0 auto; /* Centra la imagen en caso de que haya espacio extra */
-}
-
-.Slide {
-    padding: 0 10px; /* Espacio a los lados de cada imagen */
-}
-
-.SlickSlider {
+.d-flex {
     width: 100%;
-    overflow: hidden;
+    padding: 15px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.d-inline-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
