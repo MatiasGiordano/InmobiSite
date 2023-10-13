@@ -1,0 +1,16 @@
+.banner-container {
+    margin-top: 2vh;
+    height: 500px;
+    background-size: cover;
+    background-image: url("../../assets/banner.png");
+    width: 95%;
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
